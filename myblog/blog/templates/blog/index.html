@@ -1,9 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Title</title>
+	<title>许哲的博客</title>
 </head>
+<h1>
+<a href="{% url 'blog:editpage' 0 %}">增加新文章</a>
+</h1>
 <body>
-<h1>{{hello}}</h1>
+{% for i in article %}
+	<a href="{% url 'blog:article_getpage' i.id %}">{{ i.title  }}</a>
+<br/>
+{% endfor %}
 </body>
 </html>
